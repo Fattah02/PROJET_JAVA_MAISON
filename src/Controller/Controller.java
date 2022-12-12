@@ -30,14 +30,20 @@ public class Controller implements ActionListener {
         initialiselisteners();
         bCreator=new BatCreator();
         pCreator=new PersCreator();
+        repaintmenu();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==buttons.get(0)){
             System.out.println("Creation d'une personne");
-            personnes.add(pCreator.displayPersBuild());
-            System.out.println("Nouvelle personne :\n"+personnes.get(personnes.size()-1).toString()+"\n-------------------------------------------------");
+            Personne per=pCreator.displayPersBuild();
+            if(per!=null && !containsperson(per)) {
+                personnes.add(per);
+                System.out.println("Nouvelle personne :\n" + personnes.get(personnes.size() - 1).toString() + "\n-------------------------------------------------");
+                repaintmenu();
+            }
+            else {System.out.println("Personne deja existante ou annulation");}
         }
         if(e.getSource()==buttons.get(1) && personnes.size()>0){
             System.out.println("Creation d'un batiment");
@@ -52,6 +58,7 @@ public class Controller implements ActionListener {
                     optionsToChoose[0]);
             newbat(choosenbat);
         }
+
     }
 
     private void initialiselisteners(){
@@ -77,6 +84,7 @@ public class Controller implements ActionListener {
             if (choosenbat.equals("Immeuble")) {
 
             }
+            repaintmenu();
         }catch(NullPointerException error){
             System.out.println("Anunulation");
         }
@@ -101,5 +109,15 @@ public class Controller implements ActionListener {
         }else {
 
         }
+    }
+
+    private boolean containsperson(Personne pers){
+        for (int i=0;i<personnes.size();i++){
+            if(personnes.get(i).equals(pers)){
+                //en commentaire pour le dev
+                //return true;
+            }
+        }
+        return false;
     }
 }

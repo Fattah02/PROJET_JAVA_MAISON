@@ -11,6 +11,7 @@ public class Renderer extends JFrame{
     private JButton bpbat;
     private JButton bppers;
     private JButton bpinstru;
+    private TabPane tp;
     private Pan pan;
     public Renderer(){
         pan=new Pan();
@@ -45,11 +46,18 @@ public class Renderer extends JFrame{
         lab=new JLabel("Filtrer:");
         lab.setBounds(700,375,200,30);
         pan.add(lab);
+        tp = new TabPane();
+        tp.setPreferredSize(new Dimension( 2000,2000));
+        JScrollPane scrollFrame = new JScrollPane(tp);
+        tp.setAutoscrolls(true);
+        scrollFrame.setPreferredSize(new Dimension( 800,300));
+        scrollFrame.setBounds(0,36,650,565);
+        pan.add(scrollFrame);
 
     }
     public void Printtab(List<String> columns,List<List<String>> Lines){
-        //JPanel p=new
-
+        tp.refresh(columns,Lines);
+        System.out.println("\n-------------------------------------------------");
     }
 
     public JButton getBcbat() {

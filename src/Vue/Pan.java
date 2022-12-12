@@ -2,6 +2,7 @@ package Vue;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Pan extends JPanel {
     @Override
@@ -10,6 +11,5 @@ public class Pan extends JPanel {
         g.drawLine(650,0,650,600);
         g.drawLine(650,150,950,150);
         g.drawLine(0,35,650,35);
-        g.drawLine(0,65,650,65);
     }
 }

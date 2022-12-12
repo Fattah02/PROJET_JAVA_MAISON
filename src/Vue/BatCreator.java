@@ -30,7 +30,7 @@ public class BatCreator {
         panel.add(field3);
         panel.add(new JLabel("Surface Jardin :"));
         panel.add(field4);
-        int result = JOptionPane.showConfirmDialog(null, panel, "Création de Modèle.Batiments.Maison",
+        int result = JOptionPane.showConfirmDialog(null, panel, "Création de Maison",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
             Maison res;
@@ -76,7 +76,7 @@ public class BatCreator {
         panel.add(field6);
         panel.add(new JLabel("Surface Habitable :"));
         panel.add(field5);
-        int result = JOptionPane.showConfirmDialog(null, panel, "Création d\'Modèle.Batiments.Hotel",
+        int result = JOptionPane.showConfirmDialog(null, panel, "Création d\'Hotel",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
             Hotel res=null;

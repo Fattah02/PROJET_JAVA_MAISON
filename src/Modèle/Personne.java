@@ -36,4 +36,9 @@ public class Personne {
     public String getPrenom() {
         return prenom;
     }
+    public boolean equals(Personne pers){
+        if(pers.getNom().equals(this.nom)){
+            return true;
+        }else{return false;}
+    }
 }

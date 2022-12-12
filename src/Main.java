@@ -1,17 +1,27 @@
 
+import Controller.Controller;
+import Modèle.Batiment;
+import Vue.Renderer;
+
 import java.util.*;
 
 /**
  * 
  */
 public class Main {
-    private Renderer rend;
+    private static Renderer rend;
+    private static List<Batiment> batiments;
+
 
     /**
      * Default constructor
      */
     public static void main(String[] args) {
-        new Renderer();
+        rend=new Renderer();
+        batiments=new ArrayList<Batiment>();
+
+        new Controller(batiments,rend);
+
     }
 
 

@@ -35,6 +35,7 @@ public class Maison extends Batiment {
         TAUXB=Tauxb;
         nbPiece=nbP;
         impot_local_Maison=TAUXA*surfaceH+TAUXB*surfaceJ;
+        Type="Maison";
     }
 
     /**

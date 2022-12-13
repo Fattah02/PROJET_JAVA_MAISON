@@ -12,6 +12,7 @@ public class Renderer extends JFrame{
     private JButton bppers;
     private JButton bpinstru;
     private TabPane tp;
+    private JScrollPane scrollFrame;
     private Pan pan;
     public Renderer(){
         pan=new Pan();
@@ -47,16 +48,27 @@ public class Renderer extends JFrame{
         lab.setBounds(700,375,200,30);
         pan.add(lab);
         tp = new TabPane();
-        tp.setPreferredSize(new Dimension( 2000,2000));
-        JScrollPane scrollFrame = new JScrollPane(tp);
+        tp.setPreferredSize(new Dimension( 650,565));
+        scrollFrame = new JScrollPane(tp);
         tp.setAutoscrolls(true);
         scrollFrame.setPreferredSize(new Dimension( 800,300));
         scrollFrame.setBounds(0,36,650,565);
+        scrollFrame.getVerticalScrollBar().setUnitIncrement(15);
+        scrollFrame.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         pan.add(scrollFrame);
 
     }
     public void Printtab(List<String> columns,List<List<String>> Lines){
         tp.refresh(columns,Lines);
+        int val=scrollFrame.getVerticalScrollBar().getValue();
+        if(Lines.size()>16){
+            tp.setPreferredSize(new Dimension(650,535+30*(Lines.size()-16)));
+        }else{
+            tp.setPreferredSize(new Dimension(650,535));
+        }
+        scrollFrame.getVerticalScrollBar().setValue(val-1);
+        scrollFrame.getVerticalScrollBar().setValue(val+1);
+        scrollFrame.getVerticalScrollBar().setValue(val);
         System.out.println("\n-------------------------------------------------");
     }
 
@@ -65,5 +77,17 @@ public class Renderer extends JFrame{
     }
     public JButton getBcpers() {
         return bcpers;
+    }
+
+    public JButton getBpbat() {
+        return bpbat;
+    }
+
+    public JButton getBpinstru() {
+        return bpinstru;
+    }
+
+    public JButton getBppers() {
+        return bppers;
     }
 }

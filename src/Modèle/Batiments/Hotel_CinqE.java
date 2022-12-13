@@ -20,6 +20,7 @@ public class Hotel_CinqE extends Hotel{
         impot_local_Hotel=Tauxa*surfacehab;
         nbPiscine=nbPiscines;
         nbSuites=nbSuite;
+        Type="Hotel(*****)";
     }
 
 

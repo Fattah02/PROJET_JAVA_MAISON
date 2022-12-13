@@ -19,6 +19,7 @@ public class Hotel_QuatreE extends Hotel{
         TAUXB=Tauxb;
         impot_local_Hotel=Tauxa*surfacehab;
         nbSpas=nbSpa;
+        Type="Hotel(****)";
     }
 
 

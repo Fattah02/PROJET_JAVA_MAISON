@@ -4,6 +4,7 @@ package Modèle;
  * 
  */
 public abstract class Batiment {
+    protected String Type;
     /**
      * 
      */
@@ -33,5 +34,21 @@ public abstract class Batiment {
      */
     public void setProprio(Personne pers){
         proprietaire=pers;
+    }
+
+    public Personne getProprietaire() {
+        return proprietaire;
+    }
+
+    public double getSurfaceH() {
+        return surfaceH;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public String getType() {
+        return Type;
     }
 }

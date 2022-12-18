@@ -1,22 +1,15 @@
 package Modèle.Instruments;
 
+import Modèle.Batiments.Instrument_a_corde;
+import Modèle.Instrument;
+
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class Piano {
-
-    /**
-     * 
-     */
-    public int nbTouches;
+public  abstract class Piano extends Instrument_a_corde {
+    protected int nbTouches;
 
 
-    /**
-     * @param nbT
-     */
-    public void Piano(int nbT) {
-        // TODO implement here
-    }
 }

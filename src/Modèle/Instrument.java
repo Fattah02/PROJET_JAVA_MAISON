@@ -1,53 +1,11 @@
 package Modèle;
 
-import java.util.*;
-
 /**
  * 
  */
 public abstract class Instrument {
 
-    /**
-     * Default constructor
-     */
-    public Instrument() {
-    }
-
-    /**
-     * 
-     */
-    public String nomInst;
-
-    /**
-     * 
-     */
-    public int prixAchat;
-
-    /**
-     * 
-     */
-    public int prixVente;
-
-    /**
-     * 
-     */
-    public String vType;
-
-    /**
-     * 
-     */
-    public int cLongueur;
-
-    /**
-     * 
-     */
-    public int cLargeur;
-
-
-
-
-
-
-
-
+    protected String nom = "name";
+    protected int prix_achat=0;
+    protected int prix_vente=0;
 }

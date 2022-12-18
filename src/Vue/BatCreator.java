@@ -118,6 +118,51 @@ public class BatCreator {
             return null;
         }
     }
+    public Immeuble displayImmeubleBuild(List<Personne> pers) {
+        updatePers(pers);
+        JComboBox<String> combo = new JComboBox<>(personnes);
+        JTextField field1 = new JTextField("1");
+        JTextField field2 = new JTextField("test");
+        JTextField field3 = new JTextField("10");
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Propriétaire :"));
+        panel.add(combo);
+        panel.add(new JLabel("Nombre d'appartements :"));
+        panel.add(field1);
+        panel.add(new JLabel("Adresse :"));
+        panel.add(field2);
+        panel.add(new JLabel("Surface Habitable :"));
+        panel.add(field3);
+        int result = JOptionPane.showConfirmDialog(null, panel, "Création de magasin",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+        if (result == JOptionPane.OK_OPTION) {
+            return new Immeuble(Integer.parseInt(field1.getText()),field2.getText(),Double.parseDouble(field3.getText()),pers.get(combo.getSelectedIndex()));
+        }
+        else{
+            return null;
+        }
+    }
+    public Magasin displayMagasinBuild(List<Personne> pers) {
+        updatePers(pers);
+        JComboBox<String> combo = new JComboBox<>(personnes);
+        JTextField field1 = new JTextField("1");
+        JTextField field2 = new JTextField("exemple");
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Propriétaire :"));
+        panel.add(combo);
+        panel.add(new JLabel("Surface Habitalbe :"));
+        panel.add(field1);
+        panel.add(new JLabel("Adresse :"));
+        panel.add(field2);
+        int result = JOptionPane.showConfirmDialog(null, panel, "Création de magasin",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+        if (result == JOptionPane.OK_OPTION) {
+            return new Magasin(pers.get(combo.getSelectedIndex()),Double.parseDouble(field1.getText()),field2.getText());
+        }
+        else{
+            return null;
+        }
+    }
 
     public void updatePers(List<Personne> pers){
         int compt=0;

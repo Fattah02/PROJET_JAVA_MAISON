@@ -50,7 +50,7 @@ public class Controller implements ActionListener {
         }
         if(e.getSource()==buttons.get(1) && personnes.size()>0){
             System.out.println("Creation d'un batiment");
-            String[] optionsToChoose = {"Maison", "Hotel", "Magazin", "Immeuble"};
+            String[] optionsToChoose = {"Maison", "Hotel", "Magasin", "Immeuble"};
             String choosenbat = (String) JOptionPane.showInputDialog(
                     null,
                     "Type de batiment",
@@ -97,10 +97,12 @@ public class Controller implements ActionListener {
                 System.out.println("Nouveau batiment : \n"+batiments.get(batiments.size()-1).toString()+"\n-------------------------------------------------");
             }
             if (choosenbat.equals("Magasin")) {
-
+                batiments.add(bCreator.displayMagasinBuild(personnes));
+                System.out.println("Nouveau batiment : \n"+batiments.get(batiments.size()-1).toString()+"\n-------------------------------------------------");
             }
             if (choosenbat.equals("Immeuble")) {
-
+                batiments.add(bCreator.displayImmeubleBuild(personnes));
+                System.out.println("Nouveau batiment : \n"+batiments.get(batiments.size()-1).toString()+"\n-------------------------------------------------");
             }
             repaintmenu();
         }catch(NullPointerException error){

@@ -1,43 +1,17 @@
 package Modèle.Batiments;
 
+import Modèle.Instrument;
+
+import java.lang.reflect.Type;
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class Instrument_a_vent {
+public  abstract class Instrument_a_vent extends Instrument {
+    protected String type1 ="à biseau(flute)";
+    protected String type2 = "à anche simple (clarinette)";
+    protected String type3 = "à anche double(hautbois)";
 
-    /**
-     * Default constructor
-     */
-    public Instrument_a_vent() {
-    }
-
-    /**
-     * 
-     */
-    public String vType;
-
-
-
-
-
-
-    /**
-     * @param nom
-     * @param type
-     * @param prixA
-     * @param prixV
-     */
-    public void Instrument_a_vent(String nom,String type,int prixA,int prixV) {
-        // TODO implement here
-    }
-    /**
-     *
-     */
-    public String toString() {
-        // TODO implement here
-        return null;
-    }
 
 }

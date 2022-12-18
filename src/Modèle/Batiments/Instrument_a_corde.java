@@ -1,30 +1,13 @@
 package Modèle.Batiments;
 
-import java.util.*;
+import Modèle.Instrument;
+
+import java.util.List;
 
 /**
- * 
+ *
  */
-public abstract class Instrument_a_corde {
-
-    /**
-     * Default constructor
-     */
-    public Instrument_a_corde() {
-    }
-
-    /**
-     * 
-     */
-    public int longueur;
-
-    /**
-     * 
-     */
-    public int largeur;
-
-
-
-
-
+public  abstract class Instrument_a_corde extends Instrument {
+    protected int logueur = 0;
+    protected int largeur = 0;
 }

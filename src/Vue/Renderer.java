@@ -29,6 +29,9 @@ public class Renderer extends JFrame{
         bcpers=new JButton("Ajouter une personne");
         bcpers.setBounds(675,100,200,30);
         pan.add(bcpers);
+        bcpers=new JButton("Ajouter un instrument");
+        bcpers.setBounds(675,140,200,30);
+        pan.add(bcpers);
         bpbat=new JButton("Afficher les batiments");
         bpbat.setBounds(5,0,200,30);
         pan.add(bpbat);

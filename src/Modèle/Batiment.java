@@ -1,8 +1,6 @@
 package Modèle;
 
-/**
- * 
- */
+/*Création de la classe Batiment qui est la première classe abstraite des toutes les résidences conetnant toutes les caractéristiques communes(adresse, suarface habitable etc..)*/
 public abstract class Batiment {
     protected String Type;
     /**
@@ -32,6 +30,7 @@ public abstract class Batiment {
     /**
      * @param pers
      */
+    /*Les setter et getter pour récuperer le propriétaire de chaque batiment*/
     public void setProprio(Personne pers){
         proprietaire=pers;
     }
@@ -39,7 +38,7 @@ public abstract class Batiment {
     public Personne getProprietaire() {
         return proprietaire;
     }
-
+    /*Les fonctions pour retourner la surface habitable, l'adresse et le type des différents batiments*/
     public double getSurfaceH() {
         return surfaceH;
     }

@@ -7,9 +7,7 @@ import Modèle.Personne;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 
- */
+/*Création de la classe Magasin qui est une extension de la classe batiment qui contient les caractéristiques du magasin*/
 public class Magasin extends Batiment {
 
     /**
@@ -24,18 +22,16 @@ public class Magasin extends Batiment {
 
 
 
-    /**
-     * 
-     */
+    /*Création de la fonction toString qui permet l'affichage */
     public String toString() {
-        // TODO implement here
-        return null;
+        return "Magasin : \n les produits :"+produits+"\n le propriétaire"+proprietaire+"\n la surafce habitable :"+surfaceH+"\n Impots locaux"+impot_local_Magasin+"\n adresse :"+adresse+"\ntype :"+Type+"\n";
     }
 
 
     /**
      * @param prop
      */
+    /*Son constructeur contenant les différentes varibales*/
     public Magasin( Personne prop,Double surfaceh,String addr) {
         produits=new ArrayList<Instrument>();
         proprietaire=prop;

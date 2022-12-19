@@ -40,7 +40,7 @@ public class Renderer extends JFrame{
         bcloc.setBounds(675,200,200,30);
         pan.add(bcloc);
 
-        combofilt=new JComboBox<>(new String[]{"Personnes","Batiments","biens d'une personne","Appartements loués","chambres libres d'un hotel","suites libres d'un hotel"});
+        combofilt=new JComboBox<>(new String[]{"Personnes","Batiments","biens d'une personne","Appartements loués","chambres/suites libres d'un hotel"});
         combofilt.setBounds(675,410,200,30);
         pan.add(combofilt);
         bfilter=new JButton("Ok");
@@ -109,13 +109,11 @@ public class Renderer extends JFrame{
         return bcloc;
     }
 
-    public String getCombofilt() {
-        String[] choices=new String[]{"Personnes","Batiments","biens d'une personne","Appartements loués","chambres libres d'un hotel","suites libres d'un hotel"};
-        return choices[combofilt.getSelectedIndex()];
+    public int getCombofilt() {
+        return combofilt.getSelectedIndex();
     }
 
-    public String getComboinfo() {
-        String[] choices=new String[]{"Personnes","Batiments","Instruments"};
-        return choices[comboinfo.getSelectedIndex()];
+    public int getComboinfo() {
+        return comboinfo.getSelectedIndex();
     }
 }

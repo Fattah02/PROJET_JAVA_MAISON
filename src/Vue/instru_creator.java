@@ -1,5 +1,7 @@
 package Vue;
 
+import Modèle.Batiment;
+import Modèle.Batiments.Magasin;
 import Modèle.Instruments.Corde.Guitarre_acoustique;
 import Modèle.Personne;
 
@@ -21,7 +23,13 @@ public class instru_creator {
 
 
 
-    public static Guitarre_acoustique displayGuitarre_acoustiqueBuild(){
+    public static Guitarre_acoustique displayGuitarre_acoustiqueBuild(List<Batiment> magasins){
+
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field0 = new JTextField("Takamine");
         JTextField field1 = new JTextField("10");
         JTextField field2 = new JTextField("5");
@@ -32,6 +40,8 @@ public class instru_creator {
         JTextField field7 = new JTextField("6");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom :"));
         panel.add(field0);
         panel.add(new JLabel("Prix d'achat :"));
@@ -52,8 +62,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Guitare Acoustique",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-           return new Guitarre_acoustique(field0.getText(),Integer.parseInt(field1.getText()),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Boolean.parseBoolean(field5.getText()),Integer.parseInt(field6.getText()),Integer.parseInt(field7.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new Guitarre_acoustique(field0.getText(),Integer.parseInt(field1.getText()),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Boolean.parseBoolean(field5.getText()),Integer.parseInt(field6.getText()),Integer.parseInt(field7.getText())));
+            return null;
 
         }
         else{
@@ -64,9 +75,13 @@ public class instru_creator {
 
 
 
-    public static Guitarre_Elecrtique displayGuitarre_ElecBuild() {
+    public static Guitarre_Elecrtique displayGuitarre_ElecBuild(List<Batiment> magasins) {
 
-
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("Super Strat");
         JTextField field2 = new JTextField("10");
         JTextField field3 = new JTextField("20");
@@ -77,6 +92,8 @@ public class instru_creator {
         JTextField field8 = new JTextField("non");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom :"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat :"));
@@ -98,8 +115,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Guitare Electrique",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new Guitarre_Elecrtique(field1.getText(),Integer.getInteger(field2.getText()),Integer.getInteger(field3.getText()),Integer.getInteger(field4.getText()),Integer.getInteger(field5.getText()),Integer.getInteger(field6.getText()),Boolean.getBoolean(field7.getText()),Boolean.getBoolean(field8.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new Guitarre_Elecrtique(field1.getText(),Integer.getInteger(field2.getText()),Integer.getInteger(field3.getText()),Integer.getInteger(field4.getText()),Integer.getInteger(field5.getText()),Integer.getInteger(field6.getText()),Boolean.getBoolean(field7.getText()),Boolean.getBoolean(field8.getText())));
+            return null;
         }
         else{
             return null;
@@ -108,9 +126,13 @@ public class instru_creator {
     }
 
 
-    public static Piano_a_queue displayPiano_a_queueBuild() {
+    public static Piano_a_queue displayPiano_a_queueBuild(List<Batiment> magasins) {
 
-
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("YAMAHA GB1");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
@@ -121,6 +143,8 @@ public class instru_creator {
 
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom :"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat':"));
@@ -139,8 +163,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Piano à queue",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new Piano_a_queue(field1.getText(),Integer.getInteger(field2.getText()),Integer.getInteger(field3.getText()),field4.getText(),Integer.getInteger(field5.getText()),Integer.getInteger(field6.getText()),Integer.getInteger(field7.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new Piano_a_queue(field1.getText(),Integer.getInteger(field2.getText()),Integer.getInteger(field3.getText()),field4.getText(),Integer.getInteger(field5.getText()),Integer.getInteger(field6.getText()),Integer.getInteger(field7.getText())));
+            return null;
         }
         else{
             return null;
@@ -149,8 +174,12 @@ public class instru_creator {
     }
 
 
-    public static PianoDroit displayPianoDroitBuild() {
-
+    public static PianoDroit displayPianoDroitBuild(List<Batiment> magasins) {
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("YAMAHA U1");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("70");
@@ -161,6 +190,8 @@ public class instru_creator {
         JTextField field8 = new JTextField("non");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom :"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat':"));
@@ -182,8 +213,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Piano droit",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new PianoDroit(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Integer.parseInt(field5.getText()),Boolean.parseBoolean(field6.getText()),Integer.parseInt(field7.getText()),Boolean.parseBoolean(field8.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod(new PianoDroit(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Integer.parseInt(field5.getText()),Boolean.parseBoolean(field6.getText()),Integer.parseInt(field7.getText()),Boolean.parseBoolean(field8.getText())));
+            return null;
 
         }
         else{
@@ -194,9 +226,13 @@ public class instru_creator {
 
 
 
-    public static PianoNumérique displayPianoNumériqueBuild() {
+    public static PianoNumérique displayPianoNumériqueBuild(List<Batiment> magasins) {
 
-
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("Kawai");
         JTextField field2 = new JTextField("100");
         JTextField field3 = new JTextField("120");
@@ -207,6 +243,8 @@ public class instru_creator {
         JTextField field8 = new JTextField("2");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom :"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat':"));
@@ -228,8 +266,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Piano numérique",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new PianoNumérique(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Integer.parseInt(field5.getText()),Integer.parseInt(field6.getText()),Boolean.parseBoolean(field7.getText()),Double.parseDouble(field8.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new PianoNumérique(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Integer.parseInt(field5.getText()),Integer.parseInt(field6.getText()),Boolean.parseBoolean(field7.getText()),Double.parseDouble(field8.getText())));
+            return null;
 
         }
         else{
@@ -240,9 +279,13 @@ public class instru_creator {
 
 
 
-    public static Clarinette displayClarinetteBuild() {
+    public static Clarinette displayClarinetteBuild(List<Batiment> magasins) {
 
-
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("cor de basset");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
@@ -250,6 +293,8 @@ public class instru_creator {
         JTextField field5 = new JTextField("25");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom:"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat' :"));
@@ -265,8 +310,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter une Clarinette",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new Clarinette(field1.getText(),Integer.parseInt(field2.getText()),Integer.getInteger(field3.getText()),field4.getText(),Integer.getInteger(field5.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new Clarinette(field1.getText(),Integer.parseInt(field2.getText()),Integer.getInteger(field3.getText()),field4.getText(),Integer.getInteger(field5.getText())));
+            return null;
         }
         else{
             return null;
@@ -276,8 +322,13 @@ public class instru_creator {
 
 
 
-    public static FluteTraversière displayFluteTraversièreBuild() {
+    public static FluteTraversière displayFluteTraversièreBuild(List<Batiment> magasins) {
 
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("Traverso");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
@@ -285,6 +336,8 @@ public class instru_creator {
         JTextField field5 = new JTextField("26");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom:"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat' :"));
@@ -300,8 +353,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Flute traversière",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new FluteTraversière(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),field4.getText(),Integer.parseInt(field5.getText()));
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new FluteTraversière(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),field4.getText(),Integer.parseInt(field5.getText())));
+            return null;
 
         }
         else{
@@ -311,7 +365,13 @@ public class instru_creator {
     }
 
 
-    public static Hautbois displayHautboisBuild() {
+    public static Hautbois displayHautboisBuild(List<Batiment> magasins) {
+
+        String[] magasin=new String[magasins.size()];
+        for(int i=0;i<magasins.size();i++){
+            magasin[i]="Magasin au :"+magasins.get(i).getAdresse();
+        }
+        JComboBox<String> combo=new JComboBox<>(magasin);
         JTextField field1 = new JTextField("cor de basset");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
@@ -319,6 +379,8 @@ public class instru_creator {
         JTextField field5 = new JTextField("hautbois baroque");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Magasin ou il est vendu :"));
+        panel.add(combo);
         panel.add(new JLabel("Son nom:"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat' :"));
@@ -334,8 +396,9 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Hautbois",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            return new Hautbois(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),field4.getText(),field5.getText());
-
+            Magasin m=(Magasin) magasins.get(combo.getSelectedIndex());
+            m.addprod( new Hautbois(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),field4.getText(),field5.getText()));
+            return null;
         }
         else{
             return null;

@@ -23,6 +23,6 @@ public class Hotel_un_troisE extends Hotel {
     /*Création de la fonction toString qui permet l'affichage */
     @Override
     public String toString() {
-        return "Hotel : \nProprietaire : "+proprietaire+"\nAdresse : "+adresse+"\nNombres d\'etoiles : "+nbEtoile+"\nImpots locaux : "+impot_local_Hotel+"$/mois\nNombre de Chambres : "+nbChambre+"\nSurface Habitable : "+surfaceH+"\n";
+        return "Hotel : \nProprietaire : "+proprietaire+"|\nAdresse : "+adresse+"|\nNombres d\'etoiles : "+nbEtoile+"|\nImpots locaux : "+impot_local_Hotel+"$/mois|\nNombre de Chambres : "+nbChambre+"|\nSurface Habitable : "+surfaceH+"\n";
     }
 }

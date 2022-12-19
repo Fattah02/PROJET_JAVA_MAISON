@@ -42,6 +42,6 @@ public class Maison extends Batiment {
      */
     /*Création de la fonction toString qui permet l'affichage */
     public String toString() {
-        return "Maison : \nProprietaire : "+proprietaire+"\nAdresse : "+adresse+"\nImpots locaux : "+impot_local_Maison+"$/mois\nNombre de pieces : "+nbPiece+"\nSurface habitable : "+surfaceH+"\nSurface du Jardin : "+surfaceJ+"\n";
+        return "Maison : \nProprietaire : "+proprietaire+"|\nAdresse : "+adresse+"|\nImpots locaux : "+impot_local_Maison+"$/mois|\nNombre de pieces : "+nbPiece+"|\nSurface habitable : "+surfaceH+"|\nSurface du Jardin : "+surfaceJ+"\n";
     }
 }

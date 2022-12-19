@@ -24,7 +24,7 @@ public class Magasin extends Batiment {
 
     /*Création de la fonction toString qui permet l'affichage */
     public String toString() {
-        return "Magasin : \n les produits :"+produits+"\n le propriétaire"+proprietaire+"\n la surafce habitable :"+surfaceH+"\n Impots locaux"+impot_local_Magasin+"\n adresse :"+adresse+"\ntype :"+Type+"\n";
+        return "Magasin : \n les produits :"+produits+"|\n le propriétaire"+proprietaire+"|\n la surafce habitable :"+surfaceH+"|\n Impots locaux"+impot_local_Magasin+"|\n adresse :"+adresse+"|\ntype :"+Type+"|\n";
     }
 
 
@@ -39,6 +39,10 @@ public class Magasin extends Batiment {
         impot_local_Magasin=TAUXA*surfaceH;
         adresse=addr;
         Type="Magasin";
+    }
+
+    public void addprod(Instrument instu){
+        produits.add(instu);
     }
 
 }

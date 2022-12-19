@@ -25,7 +25,7 @@ public class Hotel_CinqE extends Hotel{
     /*Création de la fonction toString qui permet l'affichage */
     @Override
     public String toString() {
-        return "Hotel : \nProprietaire : "+proprietaire+"\nAdresse : "+adresse+"\nNombres d\'etoiles : "+nbEtoile+"\nNombre de Spas : "+nbSpas+"Impots locaux : "+impot_local_Hotel+"$/mois\nNombre de Chambres : "+nbChambre+"\nSurface Habitable : "+surfaceH+"\n";
+        return "Hotel : \nProprietaire : "+proprietaire+"|\nAdresse : "+adresse+"|\nNombres d\'etoiles : "+nbEtoile+"|\nNombre de Spas : "+nbSpas+"|\nImpots locaux : "+impot_local_Hotel+"$/mois|\nNombre de Chambres : "+nbChambre+"|\nSurface Habitable : "+surfaceH+"\n";
     }
     public boolean hasasuit(){
         for(int i=nbChambre;i<(nbChambre+nbSuites);i++){

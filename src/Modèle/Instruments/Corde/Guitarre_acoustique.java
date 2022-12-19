@@ -1,19 +1,16 @@
 package Modèle.Instruments.Corde;
 
-import Modèle.Instruments.Corde.Guitare;
-
 /*Création de la classe guitarre acoustique qui est une extension de la classe Guitare*/
 public class Guitarre_acoustique extends Guitare {
     public boolean droitier;
     public int val_tirant;
     /*Son constructeur avec les différentes variables*/
-    public Guitarre_acoustique( int buy_price, int vente_price, int longe, int larg,boolean droite_gauche,int tirant, int nombre_corde){
-
+    public Guitarre_acoustique(String name,int buy_price, int vente_price, int longe, int larg, boolean droite_gauche, int tirant, int nombre_corde){
+        nom = name;
         prix_achat = buy_price;
         prix_vente = vente_price;
         logueur = longe;
         largeur = larg;
-
         droitier = droite_gauche;
         val_tirant = tirant;
         nbr_cordes = nombre_corde;

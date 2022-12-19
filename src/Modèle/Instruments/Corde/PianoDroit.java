@@ -9,7 +9,7 @@ public class PianoDroit extends Piano {
     public Boolean silence;
 
     /*Son constructeur avec les différentes variables*/
-    public PianoDroit(String name, int buy_price, int vente_price, Boolean cordes, int longe, int larg, int nombre_touche, Boolean silencieux){
+    public PianoDroit(String name, int buy_price, int vente_price, int longe, int larg, Boolean cordes, int nombre_touche, Boolean silencieux){
         prix_achat = buy_price;
         prix_vente = vente_price;
         logueur = longe;

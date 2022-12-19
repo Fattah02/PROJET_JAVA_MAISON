@@ -10,6 +10,7 @@ public class Renderer extends JFrame{
     private JButton bcpers;
     private JButton bpbat;
     private JButton bppers;
+    private JButton bcinstr;
     private JButton bpinstru;
     private TabPane tp;
     private JScrollPane scrollFrame;
@@ -29,9 +30,11 @@ public class Renderer extends JFrame{
         bcpers=new JButton("Ajouter une personne");
         bcpers.setBounds(675,100,200,30);
         pan.add(bcpers);
-        bcpers=new JButton("Ajouter un instrument");
-        bcpers.setBounds(675,140,200,30);
-        pan.add(bcpers);
+
+        bcinstr = new JButton("Ajouter un instrument");
+        bcinstr.setBounds(675,120,200,30);
+        pan.add(bcinstr);
+
         bpbat=new JButton("Afficher les batiments");
         bpbat.setBounds(5,0,200,30);
         pan.add(bpbat);
@@ -80,6 +83,9 @@ public class Renderer extends JFrame{
     }
     public JButton getBcpers() {
         return bcpers;
+    }
+    public JButton getBcinstr(){
+        return bcinstr;
     }
 
     public JButton getBpbat() {

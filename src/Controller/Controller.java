@@ -1,10 +1,12 @@
 package Controller;
 
 import Modèle.Batiment;
+import Modèle.Instrument;
 import Modèle.Personne;
 import Vue.BatCreator;
 import Vue.PersCreator;
 import Vue.Renderer;
+import Vue.instru_creator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,10 +17,13 @@ import java.util.List;
 public class Controller implements ActionListener {
     private List<Personne> personnes;
     private List<Batiment> batiments;
+    private List<Instrument>instruments;
     private List<JButton> buttons;
     private Vue.Renderer ren;
     private BatCreator bCreator;
+    private instru_creator instru_creator;
     private PersCreator pCreator;
+
     private int menuNumber=1;
     public Controller(List<Batiment> bat, Renderer rend){
         batiments=bat;
@@ -30,6 +35,8 @@ public class Controller implements ActionListener {
         buttons.add(rend.getBpbat());
         buttons.add(rend.getBppers());
         buttons.add(rend.getBpinstru());
+        buttons.add(rend.getBcinstr());
+
         initialiselisteners();
         bCreator=new BatCreator();
         pCreator=new PersCreator();
@@ -76,6 +83,23 @@ public class Controller implements ActionListener {
             System.out.println("Affichage des Instruments");
             repaintmenu();
         }
+        if(e.getSource()==buttons.get(5)){
+            System.out.println("Creation d'un batiment");
+            String[] optionsToChoose = {"Guitarre_acoustique","Guitarre_Electrique","Piano_a_queue","PianoDroit","PianoNumérique","Clarinette","Flute traversière","Hautbois"};
+            String chooseninstru = (String) JOptionPane.showInputDialog(
+                    null,
+                    "Différentes instruments",
+                    "Choisir un instrument",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    optionsToChoose,
+                    optionsToChoose[0]);
+            newinst(chooseninstru);
+
+
+        }
+
+
 
     }
 
@@ -108,6 +132,35 @@ public class Controller implements ActionListener {
         }catch(NullPointerException error){
             System.out.println("Anunulation");
         }
+    }
+    private void newinst(String chooseninstru){
+        try {
+            System.out.println("Instrument choisi: " + chooseninstru+"\n");
+            if (chooseninstru.equals("Hautbois")) {
+                instruments.add(Vue.instru_creator.displayHautboisBuild());
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("Guitarre_acoustique")) {
+                instruments.add(Vue.instru_creator.displayGuitarre_acoustiqueBuild());
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("PianoDroit")) {
+                instruments.add(Vue.instru_creator.displayPianoDroitBuild());
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("Guitarre_Electrique")) {
+                instruments.add(Vue.instru_creator. displayGuitarre_ElecBuild() );
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("Piano_a_queue")) {
+                instruments.add(Vue.instru_creator. displayPiano_a_queueBuild() );
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            repaintmenu();
+        }catch(NullPointerException error){
+            System.out.println("Anunulation");
+        }
+
     }
 
     private void repaintmenu(){

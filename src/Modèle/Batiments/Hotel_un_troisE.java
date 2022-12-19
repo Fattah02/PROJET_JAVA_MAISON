@@ -10,7 +10,7 @@ public class Hotel_un_troisE extends Hotel {
     public Hotel_un_troisE(int nbE, int nbroom, List<Personne> loc, String addr, double surfacehab, Personne proprio, double Tauxa, double Tauxb) {
         nbEtoile=nbE;
         nbChambre=nbroom;
-        locataires=loc;
+        locataires=new Personne[nbroom];
         adresse=addr;
         surfaceH=surfacehab;
         proprietaire=proprio;

@@ -10,8 +10,17 @@ public abstract class Hotel extends Batiment {
     protected int nbChambre=1;
     protected int nbSpas=0;
     protected int nbPiscine=0;
-    protected List<Personne> locataires;
+    protected Personne[] locataires;
     protected double impot_local_Hotel=0;
     protected int nbEtoile=1;
     protected int nbSuites=0;
+
+    public boolean hasaroom(){
+        for(int i=0;i<(nbChambre);i++){
+            if(locataires[i]==null){
+                return true;
+            }
+        }
+        return false;
+    }
 }

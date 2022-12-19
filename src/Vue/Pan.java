@@ -9,7 +9,7 @@ public class Pan extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawLine(650,0,650,600);
-        g.drawLine(650,150,950,150);
-        g.drawLine(0,35,650,35);
+        g.drawLine(650,250,950,250);
+        g.drawLine(650,350,950,350);
     }
 }

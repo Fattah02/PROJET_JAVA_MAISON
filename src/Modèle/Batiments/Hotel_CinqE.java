@@ -10,7 +10,7 @@ public class Hotel_CinqE extends Hotel{
     public Hotel_CinqE(int nbE, int nbPiscines ,int nbSuite, int nbroom, List<Personne> loc, String addr, double surfacehab, Personne proprio, double Tauxa, double Tauxb) {
         nbEtoile=nbE;
         nbChambre=nbroom;
-        locataires=loc;
+        locataires=new Personne[nbroom+nbSuite];
         adresse=addr;
         surfaceH=surfacehab;
         proprietaire=proprio;
@@ -26,6 +26,14 @@ public class Hotel_CinqE extends Hotel{
     @Override
     public String toString() {
         return "Hotel : \nProprietaire : "+proprietaire+"\nAdresse : "+adresse+"\nNombres d\'etoiles : "+nbEtoile+"\nNombre de Spas : "+nbSpas+"Impots locaux : "+impot_local_Hotel+"$/mois\nNombre de Chambres : "+nbChambre+"\nSurface Habitable : "+surfaceH+"\n";
+    }
+    public boolean hasasuit(){
+        for(int i=nbChambre;i<(nbChambre+nbSuites);i++){
+            if(locataires[i]==null){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

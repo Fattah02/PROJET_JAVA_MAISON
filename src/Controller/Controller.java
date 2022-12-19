@@ -85,7 +85,7 @@ public class Controller implements ActionListener {
         }
         if(e.getSource()==buttons.get(5)){
             System.out.println("Creation d'un batiment");
-            String[] optionsToChoose = {"Guitarre_acoustique","Guitarre_Electrique","Piano_a_queue","PianoDroit","PianoNumérique","Clarinette","Flute traversière","Hautbois"};
+            String[] optionsToChoose = {"Guitarre_acoustique","Guitarre_Electrique","Piano_a_queue","PianoDroit","PianoNumérique","Clarinette","Flutetraversière","Hautbois"};
             String chooseninstru = (String) JOptionPane.showInputDialog(
                     null,
                     "Différentes instruments",
@@ -156,6 +156,20 @@ public class Controller implements ActionListener {
                 instruments.add(Vue.instru_creator. displayPiano_a_queueBuild() );
                 System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
             }
+            if (chooseninstru.equals("PianoNumérique")) {
+                instruments.add(Vue.instru_creator.  displayPianoNumériqueBuild() );
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("Clarinette")) {
+                instruments.add(Vue.instru_creator. displayClarinetteBuild() );
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+            if (chooseninstru.equals("Flutetraversière")) {
+                instruments.add(Vue.instru_creator.displayFluteTraversièreBuild() );
+                System.out.println("Nouveau instrument : \n"+instruments.get(instruments.size()-1).toString()+"\n-------------------------------------------------");
+            }
+
+
             repaintmenu();
         }catch(NullPointerException error){
             System.out.println("Anunulation");

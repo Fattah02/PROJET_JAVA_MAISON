@@ -114,9 +114,9 @@ public class instru_creator {
         JTextField field1 = new JTextField("YAMAHA GB1");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
-        JTextField field4 = new JTextField("1/2");
-        JTextField field5 = new JTextField("60");
-        JTextField field6 = new JTextField("40");
+        JTextField field4 = new JTextField("60");
+        JTextField field5 = new JTextField("40");
+        JTextField field6 = new JTextField("1/2");
         JTextField field7 = new JTextField("88");
 
 
@@ -194,30 +194,28 @@ public class instru_creator {
 
 
 
-    public PianoNumérique displayPianoNumériqueBuild(List<Personne> pers) {
-        updatePers(pers);
-        JComboBox<String> combo = new JComboBox<>(personnes);
-        JTextField field1 = new JTextField("10");
-        JTextField field2 = new JTextField("20");
-        JTextField field3 = new JTextField("70");
+    public static PianoNumérique displayPianoNumériqueBuild() {
+
+
+        JTextField field1 = new JTextField("Kawai");
+        JTextField field2 = new JTextField("100");
+        JTextField field3 = new JTextField("120");
         JTextField field4 = new JTextField("40");
-        JTextField field5 = new JTextField("Kawai");
+        JTextField field5 = new JTextField("15");
         JTextField field6 = new JTextField("88");
         JTextField field7 = new JTextField("non");
         JTextField field8 = new JTextField("2");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.add(new JLabel("Propriétaire :"));
-        panel.add(combo);
-        panel.add(new JLabel("Prix d'achat :"));
-        panel.add(field1);
-        panel.add(new JLabel("Prix de vente :"));
-        panel.add(field2);
-        panel.add(new JLabel("Sa longueur"));
-        panel.add(field3);
-        panel.add(new JLabel("Sa largeur"));
-        panel.add(field4);
         panel.add(new JLabel("Son nom :"));
+        panel.add(field1);
+        panel.add(new JLabel("Prix d'achat':"));
+        panel.add(field2);
+        panel.add(new JLabel("Prix de vente"));
+        panel.add(field3);
+        panel.add(new JLabel("Sa longueur"));
+        panel.add(field4);
+        panel.add(new JLabel("Sa largeur:"));
         panel.add(field5);
         panel.add(new JLabel("Nombre de touches :"));
         panel.add(field6);
@@ -230,8 +228,8 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Piano numérique",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            /* return new PianoNumérique(Integer.parseInt(field1.getText()));*/
-            return null;
+            return new PianoNumérique(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),Integer.parseInt(field4.getText()),Integer.parseInt(field5.getText()),Integer.parseInt(field6.getText()),Boolean.parseBoolean(field7.getText()),Double.parseDouble(field8.getText()));
+
 
         }
         else{
@@ -242,35 +240,32 @@ public class instru_creator {
 
 
 
-    public Clarinette displayClarinetteBuild(List<Personne> pers) {
-        updatePers(pers);
-        JComboBox<String> combo = new JComboBox<>(personnes);
+    public static Clarinette displayClarinetteBuild() {
+
+
         JTextField field1 = new JTextField("cor de basset");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
-        JTextField field4 = new JTextField("25");
-        JTextField field5 = new JTextField("Clarinette en ut");
+        JTextField field4 = new JTextField("Clarinette en ut");
+        JTextField field5 = new JTextField("25");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.add(new JLabel("Propriétaire :"));
-        panel.add(combo);
         panel.add(new JLabel("Son nom:"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat' :"));
         panel.add(field2);
         panel.add(new JLabel("Prix de vente"));
         panel.add(field3);
-        panel.add(new JLabel("Sa taille"));
+        panel.add(new JLabel("Son type"));
         panel.add(field4);
-        panel.add(new JLabel("Son type :"));
+        panel.add(new JLabel("Sa taille :"));
         panel.add(field5);
 
 
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter une Clarinette",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            /* return new Clarinette(Integer.parseInt(field1.getText()));*/
-            return null;
+            return new Clarinette(field1.getText(),Integer.parseInt(field2.getText()),Integer.getInteger(field3.getText()),field4.getText(),Integer.getInteger(field5.getText()));
 
         }
         else{
@@ -281,9 +276,8 @@ public class instru_creator {
 
 
 
-    public FluteTraversière displayFluteTraversièreBuild(List<Personne> pers) {
-        updatePers(pers);
-        JComboBox<String> combo = new JComboBox<>(personnes);
+    public static FluteTraversière displayFluteTraversièreBuild() {
+
         JTextField field1 = new JTextField("Traverso");
         JTextField field2 = new JTextField("20");
         JTextField field3 = new JTextField("30");
@@ -291,8 +285,6 @@ public class instru_creator {
         JTextField field5 = new JTextField("26");
 
         JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.add(new JLabel("Propriétaire :"));
-        panel.add(combo);
         panel.add(new JLabel("Son nom:"));
         panel.add(field1);
         panel.add(new JLabel("Prix d'achat' :"));
@@ -308,8 +300,8 @@ public class instru_creator {
         int result = JOptionPane.showConfirmDialog(null, panel, "Ajouter un Flute traversière",
                 JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
-            /* return new FluteTraversière(Integer.parseInt(field1.getText()));*/
-            return null;
+            return new FluteTraversière(field1.getText(),Integer.parseInt(field2.getText()),Integer.parseInt(field3.getText()),field4.getText(),Integer.parseInt(field5.getText()));
+
 
         }
         else{
